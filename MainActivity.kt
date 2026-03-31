@@ -28,10 +28,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun TugasWeek3() {
-    // State untuk menyimpan teks yang diketik (input)
+    // input
     var nameInput by remember { mutableStateOf("") }
 
-    // State untuk menyimpan pesan yang akan ditampilkan (output)
+    // output
     var displayText by remember { mutableStateOf("") }
 
     Column(
@@ -41,7 +41,7 @@ fun TugasWeek3() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // 1. Input Field (TextField)
+        // Input text
         OutlinedTextField(
             value = nameInput,
             onValueChange = { nameInput = it },
@@ -51,10 +51,9 @@ fun TugasWeek3() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // 2. Button untuk Proses
+        // tombol untuk Proses
         Button(
             onClick = {
-                // Logika: Ambil input dan masukkan ke dalam pesan "Hello"
                 if (nameInput.isNotEmpty()) {
                     displayText = "Haii, $nameInput!"
                 } else {
@@ -68,7 +67,7 @@ fun TugasWeek3() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // 3. Text Display (Output)
+        // text output
         if (displayText.isNotEmpty()) {
             Text(
                 text = displayText,
